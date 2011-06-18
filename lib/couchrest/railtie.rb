@@ -4,8 +4,8 @@ require "active_model/railtie"
 module CouchRest
   # = Active Record Railtie
   class ModelRailtie < Rails::Railtie
-    config.generators.orm :couchrest_model
-    config.generators.test_framework  :test_unit, :fixture => false
+    config.app_generators.orm :couchrest_model
+    config.app_generators.test_framework  :test_unit, :fixture => false
 
     initializer "couchrest_model.configure_default_connection" do
       CouchRest::Model::Base.configure do |conf|
